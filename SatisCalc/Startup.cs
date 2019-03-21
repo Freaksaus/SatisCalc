@@ -25,7 +25,7 @@ namespace SatisCalc
         {
             services.AddMvc();
 
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=SatisCalc;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = Configuration["SatisCalc:ConnectionString"];
             services.AddDbContext<SatisContext>(options => options.UseSqlServer(connection));
 
             services.AddTransient<Services.IItemService, Services.ItemService>();
