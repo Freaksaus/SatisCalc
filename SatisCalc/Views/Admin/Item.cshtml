@@ -3,7 +3,13 @@
     ViewData["Title"] = "Item";
 }
 
-<h2>Item</h2>
+<h2>Items</h2>
+
+<div class="row">
+    <div class="col-md-12 pull-right">
+        <a asp-action="Add">Add</a>
+    </div>
+</div>
 
 @foreach (var item in Model)
 {

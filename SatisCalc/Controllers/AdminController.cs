@@ -22,5 +22,20 @@ namespace SatisCalc.Controllers
             var model = itemService.Get();
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            var model = new Models.Item();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Models.Item item)
+        {
+            itemService.Add(item);
+
+            return new RedirectResult("Item");
+        }
     }
 }
