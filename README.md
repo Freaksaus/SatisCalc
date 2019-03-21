@@ -1,2 +1,2 @@
 # SatisCalc
-Calculator for SatisFactory
+Helping you calculate ratios for SatisFactory.
