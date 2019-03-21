@@ -30,7 +30,47 @@ namespace SatisCalc.Controllers
         {
             itemService.Add(item);
 
-            return new RedirectResult("Item");
+            return new RedirectToActionResult("Index", "Item", null);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var model = itemService.Get(id);
+            if(model == null)
+            {
+                return NotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Models.Item item)
+        {
+            itemService.Update(item);
+
+            return new RedirectToActionResult("Index", "Item", null);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var model = itemService.Get(id);
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirm(int id)
+        {
+            itemService.Delete(id);
+
+            return new RedirectToActionResult("Index", "Item", null);
         }
     }
 }
