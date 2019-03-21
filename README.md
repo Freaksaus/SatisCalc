@@ -1,0 +1,2 @@
+# SatisCalc
+Calculator for SatisFactory
