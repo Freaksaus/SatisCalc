@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SatisCalc.Models.Item>;
+@{
+    ViewData["Title"] = "Item";
+}
+
+<h2>Item</h2>
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-8">
+            @item.Name
+        </div>
+        <div class="col-md-4">
+            @item.Category
+        </div>
+    </div>
+}

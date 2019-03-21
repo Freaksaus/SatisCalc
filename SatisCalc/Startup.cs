@@ -27,6 +27,8 @@ namespace SatisCalc
 
             var connection = @"Server=(localdb)\mssqllocaldb;Database=SatisCalc;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<SatisContext>(options => options.UseSqlServer(connection));
+
+            services.AddTransient<Services.IItemService, Services.ItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
