@@ -86,14 +86,14 @@ namespace SatisCalc.Services
 
         private SatisCalc.Models.Item MapItem(Data.Models.Item record)
         {
-            var item = new SatisCalc.Models.Item()
+            var model = new SatisCalc.Models.Item()
             {
                 Category = record.Category,
                 Id = record.ItemId,
                 Name = record.Name,
             };
 
-            return item;
+            return model;
         }
     }
 }

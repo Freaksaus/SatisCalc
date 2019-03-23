@@ -1,4 +1,4 @@
-﻿@model SatisCalc.Models.Item
+﻿@model SatisCalc.Models.Building
 
 @{
     ViewData["Title"] = "Add";
@@ -11,11 +11,6 @@
         <label asp-for="Name" class="control-label"></label>
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Category" class="control-label"></label>
-        <input asp-for="Category" class="form-control" />
-        <span asp-validation-for="Category" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="submit" value="Add" class="btn btn-primary" />

@@ -28,6 +28,7 @@ namespace SatisCalc
             var connection = Configuration["SatisCalc:ConnectionString"];
             services.AddDbContext<SatisContext>(options => options.UseSqlServer(connection));
 
+            services.AddTransient<Services.IBuildingService, Services.BuildingService>();
             services.AddTransient<Services.IItemService, Services.ItemService>();
         }
 
