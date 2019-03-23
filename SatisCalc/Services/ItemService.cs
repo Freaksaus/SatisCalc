@@ -29,7 +29,7 @@ namespace SatisCalc.Services
 
         public bool Delete(int id)
         {
-            var record = db.Items.Where(i => i.Id == id).SingleOrDefault();
+            var record = db.Items.Where(i => i.ItemId == id).SingleOrDefault();
             if(record == null)
             {
                 return true;
@@ -55,7 +55,7 @@ namespace SatisCalc.Services
 
         public SatisCalc.Models.Item Get(int id)
         {
-            var record = db.Items.Where(i => i.Id == id).SingleOrDefault();
+            var record = db.Items.Where(i => i.ItemId == id).SingleOrDefault();
             if(record == null)
             {
                 return null;
@@ -71,7 +71,7 @@ namespace SatisCalc.Services
                 throw new Exception("Item is null");
             }
 
-            var record = db.Items.Where(i => i.Id == model.Id).SingleOrDefault();
+            var record = db.Items.Where(i => i.ItemId == model.Id).SingleOrDefault();
             if(record == null)
             {
                 throw new Exception($"Item with id: {model.Id} not found");
@@ -89,7 +89,7 @@ namespace SatisCalc.Services
             var item = new SatisCalc.Models.Item()
             {
                 Category = record.Category,
-                Id = record.Id,
+                Id = record.ItemId,
                 Name = record.Name,
             };
 

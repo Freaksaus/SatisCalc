@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Data.Models
 {
-    public class Item
+    public class Building
     {
-        public int ItemId { get; set; }
+        public int BuildingId { get; set; }
         public string Name { get; set; }
-        public string Category { get; set; }
+        public int Type  { get; set; }
+        public int Power { get; set; }
     }
 }
